@@ -1,0 +1,33 @@
+{
+  "name": "ReactNativeRedux",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "16.6.3",
+    "react-native": "0.57.7",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/react": "^16.7.20",
+    "@types/react-native": "^0.57.29",
+    "@types/react-redux": "^7.0.0",
+    "@types/react-test-renderer": "^16.0.3",
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-test-renderer": "16.6.3",
+    "typescript": "^3.2.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
