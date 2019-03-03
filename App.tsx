@@ -18,7 +18,7 @@ import {
 } from "react-native";
 import { connect, Provider } from "react-redux";
 
-import { getTime, getQuote } from "./actions";
+import * as actions from "./actions";
 import createStore from "./store";
 import { ApplicationState, ThunkDispatch } from "./types";
 
@@ -84,10 +84,10 @@ const ConnectedApp = connect(
     weather: state.weather,
     error: state.error
   }),
-  (dispatch: ThunkDispatch): DispatchProps => ({
-    getTime: () => dispatch(getTime()),
-    getQuote: () => dispatch(getQuote())
-  })
+  {
+    getTime: actions.getTime,
+    getQuote: actions.getQuote
+  }
 )(App);
 
 const makeApp = () => {

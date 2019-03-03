@@ -1,10 +1,10 @@
 import { ActionTypes, ThunkDispatch } from "./types";
 
-export const getTime = () => ({
+export const getTime = {
   type: ActionTypes.GetTime
-});
+};
 
-export const getQuote = () => (dispatch: ThunkDispatch) =>
+export const getQuote = (dispatch: ThunkDispatch) =>
   fetch("http://quotes.rest/qod")
     .then(request => request.json())
     .then(body => {
@@ -14,7 +14,7 @@ export const getQuote = () => (dispatch: ThunkDispatch) =>
         quote: { message: quote.quote, author: quote.author }
       });
     })
-    .then(() => dispatch(getWeather()))
+    .then(() => dispatch(getWeather))
     .catch(e => {
       dispatch({
         type: ActionTypes.Error,
@@ -22,7 +22,7 @@ export const getQuote = () => (dispatch: ThunkDispatch) =>
       });
     });
 
-export const getWeather = () => (dispatch: ThunkDispatch) =>
+export const getWeather = (dispatch: ThunkDispatch) =>
   fetch("http://wttr.in/Copenhagen?format=3")
     .then(request => request.text())
     .then(body => {
